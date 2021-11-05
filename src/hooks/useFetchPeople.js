@@ -26,6 +26,6 @@ export const useFetchPeople = (stringChain) => {
          
       }, [stringChain])
 
-    return state; //Devuelve {data: [], loading: true}
+    return state;
 
 }

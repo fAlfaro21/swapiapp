@@ -1,33 +1,30 @@
 import React from 'react';
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-export const ShowDetailsScreen = ({name, gender, birth_year, eye_color, height, mass, hair_color, skin_color }) => {
+export const ShowDetailsScreen = ({ peopleDetails = {} }) => {
     
     return (
-        <>
-            <h3> Hola </h3>        
+        <>      
+            <div className="card-grid">  
 
-            {/* <div className="card-grid">  
-
-                <Table striped bordered hover responsive className="table-sm">
-                    <thead>
-                        <tr>
-                            <th>NAME</th>
-                            <th>GENDER</th>
-                            <th>BIRTH YEAR</th>
-                            <th>EYE COLOR</th>
-                        </tr>
-                    </thead>
-                </Table>
-
-                    {
-                        peopleInfo.map( (img) => (
-                            <PeopleGridItem 
-                                key = {img.name}
-                                {...img} />
-                            )
-                        )
-                    }
-            </div> */}
+                <Card style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title as='div'>
+                            <strong>Information about...</strong>
+                        </Card.Title>
+                        <ListGroup className="list-group-flush">
+                            <ListGroupItem>Name: {peopleDetails.name}</ListGroupItem>
+                            <ListGroupItem>Gender: {peopleDetails.height}</ListGroupItem>
+                            <ListGroupItem>Mass: {peopleDetails.mass}</ListGroupItem>
+                            <ListGroupItem>Hair color: {peopleDetails.hair_color}</ListGroupItem>
+                            <ListGroupItem>Skin color: {peopleDetails.skin_color}</ListGroupItem>
+                            <ListGroupItem>Eye color: {peopleDetails.eye_color}</ListGroupItem>
+                            <ListGroupItem>Birth year: {peopleDetails.birth_year}</ListGroupItem>
+                            <ListGroupItem>Gender: {peopleDetails.gender}</ListGroupItem>
+                        </ListGroup>
+                    </Card.Body>
+                </Card>
+            </div>
         </>
     )
 }

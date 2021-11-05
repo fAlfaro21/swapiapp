@@ -1,15 +1,15 @@
 import { types } from "../types/types";
 
-const initialState = "";
+const initialState = false;
 
-export const showPeopleReducer = ( state = initialState, action) => {
+export const buttonSaveReducer = ( state = initialState, action) => {
 
     switch (action.type) {
         
-        case types.peopleShowDetails:
+        case types.savedButton:
             return {
                 ...state,
-                peopleDetails: action.payload
+                savedButton: action.payload
             }
 
         default:

@@ -1,4 +1,3 @@
-//Para hacer aparecer una nueva nota en la barra izq, una vez que hagamos clic en anadir
 import { types } from "../types/types";
 
 export const addNewPeople = ( name ) => ({
@@ -8,9 +7,26 @@ export const addNewPeople = ( name ) => ({
     }
 })
 
-export const showPeopleDetails = ( name ) => ({
+export const showPeopleDetails = ( name, gender, height, mass, hair_color, skin_color, birth_year, eye_color ) => ({
     type: types.peopleShowDetails,
     payload: {
-        name
+        name,
+        gender,
+        height,
+        mass,
+        hair_color, 
+        skin_color,
+        birth_year, 
+        eye_color
     }
+})
+
+export const savedButton = () => ({
+    type: types.savedButton,
+    payload: true
+})
+
+export const showDetailsButton = () => ({
+    type: types.showDetailsButton,
+    payload: true
 })

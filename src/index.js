@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SwapiApp from './SwapiApp';
 import './bootstrap.min.css';
 import './index.css';
+import { MainApp } from './MainApp';
 
 ReactDOM.render(
-    <SwapiApp />,
+    <MainApp />,
   document.getElementById('root')
 );

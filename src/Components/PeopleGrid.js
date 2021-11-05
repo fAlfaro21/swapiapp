@@ -1,25 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import { useFetchPeople } from '../hooks/useFetchPeople';
 import { PeopleGridItem } from './PeopleGridItem';
 
 export const PeopleGrid = ({stringChain}) => {
 
-    //Aqui utilizo mi Custom Hook: useFetchGifs para traer mi coleccion de peopleInfo junto con un estado (true o false)
+    
     const { data:peopleInfo, loading } = useFetchPeople(stringChain);
 
-    // const [peopleSaved, setPeopleSaved] = useState("");
-
-    // const peopleSavedOrder = (name) => {
-    //     setPeopleSaved(name);
-    //     console.log(peopleSaved);
-    //   };
+    //const { people } = useSelector( state => state.peopleSaved ); 
     
     return (
         <>
-            {/* <h3 className="animate__animated animate__fadeIn"> { category } </h3>         */}
-
             { loading && <p className="animate__animated animate__flash">Cargando...</p> }
 
             <div className="card-grid">  
@@ -34,14 +27,12 @@ export const PeopleGrid = ({stringChain}) => {
                         </tr>
                     </thead>
                 </Table>
-
                     {
                         peopleInfo.map( (info) => (
-                            <PeopleGridItem 
-                                key = {info.name}
-                                {...info}
-                                //peopleSavedOrder = { peopleSavedOrder }
-                            />
+                                <PeopleGridItem 
+                                    key = {info.name}
+                                    {...info}
+                                />
                             )
                         )
                     }
